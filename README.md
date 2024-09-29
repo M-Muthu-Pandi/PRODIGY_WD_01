@@ -20,10 +20,10 @@ Try the live demo [here](your-live-demo-link).
 
 ## Project Structure
 
-index.html       # HTML file containing the stopwatch structure
-styles.css       # CSS file for styling and responsiveness
-script.js        # JavaScript file for stopwatch functionality
-README.md        # Project documentation (this file)
+- index.html       # HTML file containing the stopwatch structure
+- styles.css       # CSS file for styling and responsiveness
+- script.js        # JavaScript file for stopwatch functionality
+- README.md        # Project documentation (this file)
 
 
 ## How It Works
@@ -50,6 +50,6 @@ The stopwatch is controlled by JavaScript, using event listeners to handle user 
 
 For any questions or suggestions, feel free to reach out:
 
-- **Email**: [text](mailto:muthupandim5799%40gmail.com)
+- **Email**: muthupandim5799%40gmail.com
 - **GitHub**: https://github.com/M-Muthu-Pandi
 - **LinkedIn**: https://www.linkedin.com/in/muthupandim
