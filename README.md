@@ -15,7 +15,7 @@ A simple and mobile-responsive stopwatch web application built using **HTML**, *
 
 ## Demo
 
-Try the live demo [here](your-live-demo-link).
+Try the live demo [here](https://m-muthu-pandi.github.io/PRODIGY_WD_01/).
 
 
 ## Project Structure
