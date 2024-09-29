@@ -50,6 +50,6 @@ The stopwatch is controlled by JavaScript, using event listeners to handle user 
 
 For any questions or suggestions, feel free to reach out:
 
-- **Email**: muthupandim5799%40gmail.com
+- **Email**: muthupandim5799@gmail.com
 - **GitHub**: https://github.com/M-Muthu-Pandi
 - **LinkedIn**: https://www.linkedin.com/in/muthupandim
