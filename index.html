@@ -6,22 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Mu2 Website Icon.png">
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Stopwatch</h1>
-        <div id="display">00:00:00</div>
-        <div class="buttons">
-            <button id="startBtn">Start</button>
-            <button id="pauseBtn" disabled>Pause</button>
-            <button id="resetBtn">Reset</button>
-            <button id="lapBtn" disabled>Lap</button>
-        </div>
-        <div id="laps">
-            <h3>Laps:</h3>
-            <ul id="lapTimes"></ul>
-        </div>
+        <main class="stopwatch">
+            <section>
+                <div id="display">00:00:00</div>
+                <div class="buttons">
+                    <button id="startBtn" title="Start/Resume"><i class="fa-solid fa-play"></i></button>
+                    <button id="pauseBtn" title="Pause" style="display: none;"><i
+                            class="fa-solid fa-pause"></i></button>
+                    <button id="resetBtn" title="Stop/Reset" style="display: none;"><i
+                            class="fa-solid fa-stop"></i></button>
+                    <button id="lapBtn" title="Laps" style="display: none;"><i class="fa-solid fa-flag"></i></button>
+                </div>
+            </section>
+            <section id="laps">
+                <h3>Laps:</h3>
+                <ul id="lapTimes"></ul>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>

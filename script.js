@@ -11,14 +11,15 @@ const pauseBtn = document.getElementById('pauseBtn');
 const resetBtn = document.getElementById('resetBtn');
 const lapBtn = document.getElementById('lapBtn');
 const lapTimes = document.getElementById('lapTimes');
+const laps = document.getElementById('laps');
 
 // Function to format the time
-function formatTime(ms) {
+let formatTime = (ms) => {
     const totalSeconds = Math.floor(ms / 1000);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     const milliseconds = Math.floor((ms % 1000) / 10);
-    
+
     return (
         (minutes < 10 ? '0' : '') + minutes + ':' +
         (seconds < 10 ? '0' : '') + seconds + ':' +
@@ -27,28 +28,35 @@ function formatTime(ms) {
 }
 
 // Start the stopwatch
-function startStopwatch() {
+startBtn.addEventListener('click', () => {
     if (!running) {
         startTime = Date.now() - difference;
         interval = setInterval(updateDisplay, 10);
         running = true;
-        startBtn.textContent = 'Resume';
-        pauseBtn.disabled = false;
-        lapBtn.disabled = false;
+        startBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        startBtn.style.display = "none";
+        pauseBtn.style.display = "inline-block";
+        resetBtn.style.display = "none";
+        lapBtn.style.display = "inline-block";
+        laps.style.display = "inline-block";
     }
-}
+});
 
 // Pause the stopwatch
-function pauseStopwatch() {
+pauseBtn.addEventListener('click', () => {
     if (running) {
         clearInterval(interval);
         difference = Date.now() - startTime;
         running = false;
+        startBtn.style.display = "inline-block";
+        pauseBtn.style.display = "none";
+        resetBtn.style.display = "inline-block";
+        lapBtn.style.display = "none";
     }
-}
+});
 
 // Reset the stopwatch
-function resetStopwatch() {
+resetBtn.addEventListener('click',() => {
     clearInterval(interval);
     startTime = 0;
     difference = 0;
@@ -56,28 +64,22 @@ function resetStopwatch() {
     display.textContent = '00:00:00';
     lapTimes.innerHTML = '';
     lapCounter = 1;
-    startBtn.textContent = 'Start';
-    pauseBtn.disabled = true;
-    lapBtn.disabled = true;
-}
+    startBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    resetBtn.style.display = "none";
+    laps.style.display = "none";
+});
 
 // Update the display
-function updateDisplay() {
+let updateDisplay = () => {
     updatedTime = Date.now() - startTime;
     display.textContent = formatTime(updatedTime);
 }
 
 // Record lap time
-function recordLap() {
+lapBtn.addEventListener('click',  () => {
     const lapTime = formatTime(updatedTime);
     const li = document.createElement('li');
     li.textContent = `Lap ${lapCounter}: ${lapTime}`;
     lapTimes.appendChild(li);
     lapCounter++;
-}
-
-// Event listeners
-startBtn.addEventListener('click', startStopwatch);
-pauseBtn.addEventListener('click', pauseStopwatch);
-resetBtn.addEventListener('click', resetStopwatch);
-lapBtn.addEventListener('click', recordLap);
+});
