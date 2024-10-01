@@ -64,3 +64,9 @@ body {
     margin-bottom: 5px;
     font-size: 1.2rem;
 }
+
+.absolute {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
